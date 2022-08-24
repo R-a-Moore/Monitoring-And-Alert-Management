@@ -6,6 +6,8 @@ It ensures that deployment architecture is highly available.
 
 We want to find out about issues before the user does.
 
+![Monitoring   Alert Management(1)](https://user-images.githubusercontent.com/47668244/186459688-7d6ff291-9136-4012-bbc5-9f23808f131f.png)
+
 ### Defintion
 
 Cloud monitoring is a method of reviewing, observing and managing the operational workflow 
@@ -106,6 +108,8 @@ go to your instance --> actions --> monitor & troubleshoot --> manage detailed m
 select instance -> monitoring --> add dashboard
 
 # Autoscaling & Load Balancing
+
+![Autoscaling   Load Balancing](https://user-images.githubusercontent.com/47668244/186459740-d516eb59-1fea-41ca-af19-5c140df2a941.png)
 
 how many instances do we want to spin up? when? under what conditions? Autoscaling and load balancing dictates that.
 
