@@ -84,6 +84,16 @@ first come first serve (FIFO)
 ## Steps to Implementing Cloudwatch & SNS
 
 
+### alarms
+go to your instance --> actions --> monitor & troubleshoot --> manage cloudwatch alarms
+
+or
+
+go to cloudwatch site --> alarms --> all alarmas --> create alarm
+
+
+
+### dashboards
 
 go to your instance --> actions --> monitor & troubleshoot --> manage detailed monitoring
 
