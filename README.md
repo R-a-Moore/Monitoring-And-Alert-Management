@@ -92,7 +92,6 @@ first come first serve (FIFO)
 
 ## Steps to Implementing Cloudwatch & SNS
 
-
 ### alarms
 go to your instance --> actions --> monitor & troubleshoot --> manage cloudwatch alarms
 
@@ -107,6 +106,91 @@ go to cloudwatch site --> alarms --> all alarmas --> create alarm
 go to your instance --> actions --> monitor & troubleshoot --> manage detailed monitoring
 
 select instance -> monitoring --> add dashboard
+
+### How to export logs to S3
+
+These are the steps of how to export logs from your log group to be stored in your s3 bucket, on console.
+
+[Exporting logs to s3](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/S3ExportTasksConsole.html)
+
+#### Create a Bucket
+First you need to create a bucket to store your logs.
+
+create a bucket (with ACL permissions), adding the appropriate json policy.
+
+json policy for buckets owned by you
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+          "Action": "s3:GetBucketAcl",
+          "Effect": "Allow",
+          "Resource": "arn:aws:s3:::my-exported-logs",
+          "Principal": { "Service": "logs.us-west-2.amazonaws.com" }
+      },
+      {
+          "Action": "s3:PutObject" ,
+          "Effect": "Allow",
+          "Resource": "arn:aws:s3:::my-exported-logs/random-string/*",
+          "Condition": { "StringEquals": { "s3:x-amz-acl": "bucket-owner-full-control" } },
+          "Principal": { "Service": "logs.us-west-2.amazonaws.com" }
+      }
+    ]
+}
+```
+json policy for buckets not owned by you
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+          "Action": "s3:GetBucketAcl",
+          "Effect": "Allow",
+          "Resource": "arn:aws:s3:::my-exported-logs",
+          "Principal": { "Service": "logs.us-west-2.amazonaws.com" }
+      },
+      {
+          "Action": "s3:PutObject" ,
+          "Effect": "Allow",
+          "Resource": "arn:aws:s3:::my-exported-logs/random-string/*",
+          "Condition": { "StringEquals": { "s3:x-amz-acl": "bucket-owner-full-control" } },
+          "Principal": { "Service": "logs.us-west-2.amazonaws.com" }
+      },
+      {
+          "Action": "s3:PutObject" ,
+          "Effect": "Allow",
+          "Resource": "arn:aws:s3:::my-exported-logs/random-string/*",
+          "Condition": { "StringEquals": { "s3:x-amz-acl": "bucket-owner-full-control" } },
+          "Principal": { "AWS": "arn:aws:iam::SendingAccountID:user/CWLExportUser" }
+      }
+    ]
+}
+```
+
+remember to implement your specific bucket and region where the script says `my-exported-logs` and `us-west-2`
+
+Also in the part where it says `random-strin` this is where you will be saving your logs, so make sure to call it something pertenant.
+
+#### Creating a Log Group
+
+in Cloudwatch, select Log Groups and create a new Log Group.
+
+Choose Actions, Export data to Amazon S3.
+
+On the Export data to Amazon S3 screen, under Define data export, set the time range for the data to export using From and To.
+
+If your log group has multiple log streams, you can provide a log stream prefix to limit the log group data to a specific stream. Choose Advanced, and then for Stream prefix, enter the log stream prefix.
+
+Under Choose S3 bucket, choose the account associated with the Amazon S3 bucket.
+
+For S3 bucket name, choose an Amazon S3 bucket.
+
+For S3 Bucket prefix, enter the randomly generated string that you specified in the bucket policy.
+
+Choose Export to export your log data to Amazon S3.
+
 
 # Autoscaling & Load Balancing
 
