@@ -287,6 +287,10 @@ select subnet (availability zone)
 
 ### Systemd Services
 
+[Services in Linux](https://unixcop.com/how-to-create-a-systemd-service-in-linux/)
+
+[Stackoverflow - Services solution](https://stackoverflow.com/questions/64353905/running-npm-start-from-execstart-in-systemctl-service-file)
+
 Sometimes when you set up your auto scaling group, scripts will not work. Especially if you are setting up scripts in User Data, and you are calling to script files in your instance(s) that you're spinning up.
 
 This is because your user data operates as a script for starting up the machine instance. So it may not have all of the pre-requesits (such as the scripts that are loaded on the machine that you're calling to).
