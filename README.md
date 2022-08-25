@@ -70,6 +70,8 @@ puts into understandable metrics for business and other layman (answer for why t
 free - 10 metrics
 $0.30 - first 10,000 metrics
 
+![cloudwatch coverage](https://user-images.githubusercontent.com/47668244/186627755-8fc13311-45c6-4e37-8ef7-cc13629469df.png)
+
 ## SNS
 
 [AWS SNS](https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
