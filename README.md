@@ -58,6 +58,9 @@ Remember, application services usually start to degrade before a metric reaches 
 
 ## CloudWatch
 
+![cloud watch coverage](https://user-images.githubusercontent.com/47668244/186727009-59f3fb08-b4cc-4620-bd0b-263f9f1bd686.png)
+
+
 A cloud application monitoring service
 
 can be used to monitor a number of resources, in our case EC2, or specified data.
