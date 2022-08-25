@@ -20,8 +20,9 @@ starts after applications are deployed
 
 we need to find out and deal with the situation if issues occur.
 
+[Intro to alerts](https://cloud.google.com/monitoring/alerts)
 
-
+[Types of cloud monitoring](https://www.netapp.com/cloud-services/what-is-cloud-monitoring/)
 ### Benefits
 
 - aids scaling, making it more seemless, able to work in any size of organisation
