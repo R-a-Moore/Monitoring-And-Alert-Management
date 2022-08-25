@@ -202,26 +202,25 @@ a load balancer works when it needs to balance load between multiple instances (
 
 job of load balancer is to see what instances are healthy or not, knowing to halt inhealthy ones, and redirect to healthy ones
 
-if we have a load balancer, why do we need auto scaling groups exist?
-
-we create a policy for how many minimum instances there should be, how many are desired, and scaling to reach a maximum
-
-the load balancer will balance the traffic load between them all, all the whilst.
-
-all of these instances in the autoscaling group are replications of our app instance for example, the load balancer spins up, monitors and shuts down all of them according to the traffic and metrics of user requests.
-
-auto scaling groups automatically adjusts the amount of computational resource based on the server load
-
-balancer distributes traffic between ec2 instances so that no one instance gets overwhelmed
-
 they are both managed services (meaning it's managed by AWS, not the client).
 
 together load balancers and autoscaling groups help provide scalability and high availability.
 
 ## Autoscaling group
 
+if we have a load balancer, why do we need auto scaling groups exist?
+
+we create a policy for how many minimum instances there should be, how many are desired, and scaling to reach a maximum
+
+all of these instances in the autoscaling group are replications of our app instance for example, the load balancer spins up, monitors and shuts down all of them according to the traffic and metrics of user requests.
+
+auto scaling groups automatically adjusts the amount of computational resource based on the server load
+
 ## Load Balancer
 
+balancer distributes traffic between ec2 instances so that no one instance gets overwhelmed
+
+the load balancer will balance the traffic load between them all, all the whilst.
 
 ### Types of Load Balancer
 
