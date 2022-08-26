@@ -255,7 +255,7 @@ they are all meant to meat out measuring of cost effectiveness
 
 # Autoscaling & Load Balancer Task
 
-![App ALB   Auto Scaling Group](https://user-images.githubusercontent.com/47668244/186870982-9018f48a-66a0-4992-aa7c-971e6e156fd7.png)
+![App ALB   Auto Scaling Group](https://user-images.githubusercontent.com/47668244/186885646-2f09d218-34b1-4953-951a-1a530fc5e604.png)
 
 task steps:
 - create autoscaling group; policy = min 2 - desired 2 - max 3
