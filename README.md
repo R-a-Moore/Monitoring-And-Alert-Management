@@ -289,7 +289,16 @@ select launch template
 ![select a template](https://user-images.githubusercontent.com/47668244/186873790-cd5b9bba-e93c-419e-8d6b-9ee43be1cd50.png)
 
 select vpc (cloud region)
+
 select subnet (availability zone)
+
+![vpc   subnet](https://user-images.githubusercontent.com/47668244/186874874-e7dc8ff9-6db3-4c87-96d2-53f2e9912cbc.png)
+
+select whether you need a load balancer and all of the specifications thereof.
+
+Then set out your target group.
+
+![load balancer   target group](https://user-images.githubusercontent.com/47668244/186874988-4133f98e-3c68-4800-ac8d-0137c2088a2c.png)
 
 ### Systemd Services
 
