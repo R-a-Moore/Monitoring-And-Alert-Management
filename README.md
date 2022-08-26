@@ -283,7 +283,11 @@ ec2 --> launch template --> create template --> configure:
 EC2 dashboard --> autoscaling groups (scroll down)
 
 give name
+![create an asg](https://user-images.githubusercontent.com/47668244/186873771-603d06ea-fb47-4700-ad34-11d160893eff.png)
+
 select launch template
+![select a template](https://user-images.githubusercontent.com/47668244/186873790-cd5b9bba-e93c-419e-8d6b-9ee43be1cd50.png)
+
 select vpc (cloud region)
 select subnet (availability zone)
 
